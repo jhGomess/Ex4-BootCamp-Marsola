@@ -1,0 +1,64 @@
+body {
+  background: $bg-color;
+}
+
+@mixin coluna($cor-texto) {
+  background: $card-color;
+  border-radius: 8px;
+  text-align: center;
+  width: 280px;
+  height: 600px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  p {
+    margin: 16px 0 0 0;
+    color: $cor-texto;
+    font: bold 18px "Noto-Sans", sans-serif;
+  }
+
+  @media screen and (max-width: $bp-tablet) {
+    width: 200px;
+    height: 400px;
+  }
+
+  @media screen and (max-width: $bp-mobile) {
+    width: auto;
+    height: 200px;
+    margin: 16px 0;
+  }
+}
+
+@mixin titulo {
+  font: bold 32px "mulish", sans-serif;
+  color: $white;
+  text-align: center;
+  margin: 16px 0 32px 0;
+}
+
+h1 {
+  @include titulo();
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+
+  .col:nth-child(1) {
+    @include coluna($white);
+  }
+  .col:nth-child(2) {
+    @include coluna($orange);
+  }
+  .col:nth-child(3) {
+    @include coluna($green);
+  }
+
+  @media screen and (max-width: $bp-mobile) {
+    width: 80%;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
