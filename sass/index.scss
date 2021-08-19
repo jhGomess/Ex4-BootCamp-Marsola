@@ -4,6 +4,9 @@ $white: #ffffff;
 $orange: #f1af4b;
 $green: #4ff14b;
 
+$bp-tablet: 768px;
+$bp-mobile: 425px;
+
 @import "reset";
 @import "home";
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@700&family=Noto+Sans:wght@400;700&display=swap");
